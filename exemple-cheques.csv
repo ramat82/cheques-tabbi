@@ -1,0 +1,18 @@
+model;payee;amount;city;date;comment
+ABC BANK;SARL ALPHA SERVICES;125000.00;Alger;26/08/2026;Facture fournitures
+BADR;EURL AGRI PLUS;243521.35;Bordj Bou Arreridj;26/08/2026;Achat materiel agricole
+BDL;SARL BATI CENTRE;185000.00;Setif;26/08/2026;Situation travaux
+BEA;ETS BENALI MOHAMED;97500.50;Bejaia;26/08/2026;Reglement fournisseur
+BNA;SARL EL AMEL;320000.00;Constantine;26/08/2026;Facture marchandises
+BNP_Paribas;EURL TECH SOLUTIONS;156750.00;Alger;26/08/2026;Maintenance informatique
+CCP;AMRANE KARIM;28500.00;Batna;26/08/2026;Remboursement frais
+CNEP;SARL IMMOBILIER PLUS;450000.00;Blida;26/08/2026;Acompte travaux
+CPA;SARL HYDRO SERVICES;145300.00;Oran;26/08/2026;Facture intervention
+ESSALEM BANK;EURL EL FADJR;87500.00;Setif;26/08/2026;Achat fournitures
+FRANSABANK;SARL MED SERVICES;212000.00;Alger;26/08/2026;Reglement prestation
+GULF BANK ALGERIE;EURL GLOBAL TRADE;365000.00;Oran;26/08/2026;Reglement importation
+NATIXIS BANK;SARL INDUSTRIE NORD;278450.75;Annaba;26/08/2026;Achat equipement
+SOCIET_GENER;EURL CONSEIL PLUS;67000.00;Alger;26/08/2026;Honoraires conseil
+TRESOR;DIRECTION DES SERVICES;198500.00;Bordj Bou Arreridj;26/08/2026;Reglement administratif
+TRUST BANK;SARL TRANSPORT EXPRESS;118000.00;Constantine;26/08/2026;Transport marchandises
+alBARAKAbank;EURL NOUR COMMERCE;225750.00;Setif;26/08/2026;Reglement fournisseur
