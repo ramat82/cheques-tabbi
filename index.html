@@ -17,13 +17,17 @@
 
   <link rel="stylesheet" href="style.css">
   <style>
-    .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366!important;color:#fff!important;border:2px solid #25D366!important;text-decoration:none!important;font-weight:900}
+    .hero .actions{display:grid;grid-template-columns:1.18fr .98fr;gap:18px;margin-top:28px;max-width:760px;align-items:stretch}
+    .hero .actions .hero-download{grid-column:1/-1;min-height:76px;border-radius:17px;background:#1558a6;color:#fff;font-size:clamp(1.15rem,2.2vw,1.7rem);box-shadow:0 10px 22px rgba(21,88,166,.22);gap:14px}
+    .hero .actions .hero-download svg{width:34px;height:34px;flex:0 0 auto}
+    .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:70px;padding:14px 22px;background:#22c653!important;color:#fff!important;border:2px solid #22c653!important;border-radius:16px!important;text-decoration:none!important;font-weight:900;font-size:clamp(1rem,1.8vw,1.3rem);box-shadow:0 8px 18px rgba(34,198,83,.20)}
     .btn-whatsapp:hover{filter:brightness(.94)}
-    .download-counter{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:800;font-size:14px}
+    .btn-whatsapp svg{width:30px;height:30px;flex:0 0 auto}
+    .hero .actions .secondary{min-height:70px;border:2px solid #fff;border-radius:16px;background:rgba(255,255,255,.12);color:#1c2e41;font-size:clamp(1rem,1.8vw,1.25rem);box-shadow:none}
+    .commercial-note{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;align-items:center;max-width:860px}
+    .commercial-note span,.commercial-note .download-counter{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin:0;padding:10px 15px;border-radius:999px;background:#fff;color:#111;border:1px solid rgba(24,89,122,.10);box-shadow:0 6px 14px rgba(16,73,101,.12);font-weight:900;font-size:14px;white-space:nowrap}
+    .commercial-note .download-counter .counter-dot{font-size:11px;color:#111}
     .download-counter.dark{background:#eef5f9;border-color:#c8dbe7;color:#17394d}
-    .counter-dot{font-size:11px;color:#31c46d}
-    .commercial-note{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .commercial-note span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:800;font-size:14px}
     .purchase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
     .purchase-step{padding:22px;border-radius:16px;background:#fff;border:1px solid #dce8ef;box-shadow:0 8px 26px rgba(14,54,78,.07)}
     .purchase-step .step-num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#0a5f8f;color:#fff;font-weight:900;margin-bottom:10px}
@@ -32,7 +36,7 @@
     .purchase-summary div{padding:16px;border-radius:14px;background:#eef6fa;border:1px solid #d4e4ed;text-align:center}
     .purchase-summary strong{display:block;color:#123f59;margin-bottom:4px}.purchase-summary span{font-weight:800;color:#0a5f8f}
     @media(max-width:900px){.purchase-grid{grid-template-columns:1fr 1fr}.purchase-summary{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.purchase-grid,.purchase-summary{grid-template-columns:1fr}}
+    @media(max-width:640px){.hero .actions{grid-template-columns:1fr}.hero .actions .hero-download{grid-column:auto}.hero .actions .btn{width:100%}.commercial-note{gap:8px}.commercial-note span,.commercial-note .download-counter{font-size:12px;padding:8px 11px}.purchase-grid,.purchase-summary{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -44,16 +48,22 @@
         <p class="subtitle">Préparez, imprimez et archivez vos chèques simplement.</p>
         <p class="lead">Une application conçue pour gérer plusieurs modèles bancaires, préparer des séries de chèques, contrôler leur mise en page et conserver un PDF GED associé à chaque opération.</p>
         <div class="actions">
-          <a class="btn primary" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger pour Windows 64 bits</a>
-          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 Acheter sur WhatsApp</a>
+          <a class="btn primary hero-download" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v4h14v-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Télécharger pour Windows 64 bits
+          </a>
+          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8.6 7.8c.4-.5.8-.4 1.1-.1l1.1 1.5c.2.3.2.6 0 .9l-.6.8c.8 1.6 1.9 2.7 3.6 3.5l.8-.7c.3-.2.6-.2.9 0l1.5 1.1c.4.3.4.7.1 1.1-.8 1-1.8 1.4-3 1.1-3.3-.9-6.1-3.6-7-7-.3-1.1.2-2.3 1.5-3.2Z" fill="currentColor"/></svg>
+            Acheter sur WhatsApp
+          </a>
           <a class="btn secondary" href="#captures">Voir l’application</a>
         </div>
         <div class="commercial-note">
           <span>✓ Essai gratuit 90 jours</span>
-          <span>3 000 DA • paiement unique</span>
+          <span>3 000 DA - paiement unique</span>
           <span>Licence permanente</span>
+          <div class="download-counter" aria-live="polite"><span class="counter-dot">•</span><span class="cheques-download-count">Chargement...</span></div>
         </div>
-        <div class="download-counter" aria-live="polite"><span class="counter-dot">●</span><span class="cheques-download-count">Chargement du compteur...</span></div>
         <p class="small">Windows 10 / 11 • Version 64 bits • Aucune carte bancaire demandée pour l’essai</p>
       </div>
       <div class="hero-shot">
