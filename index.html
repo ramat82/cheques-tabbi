@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Chèques Tabbi — préparation, impression, réglage et archivage PDF GED de chèques sous Windows.">
+  <meta name="description" content="Chèques Tabbi — préparation, impression, réglage et archivage PDF GED de chèques sous Windows. Essai gratuit 90 jours, licence permanente 3 000 DA.">
   <title>Chèques Tabbi — Impression et GED</title>
 
   <!-- Google Analytics -->
@@ -22,6 +22,17 @@
     .download-counter{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:800;font-size:14px}
     .download-counter.dark{background:#eef5f9;border-color:#c8dbe7;color:#17394d}
     .counter-dot{font-size:11px;color:#31c46d}
+    .commercial-note{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .commercial-note span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:800;font-size:14px}
+    .purchase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .purchase-step{padding:22px;border-radius:16px;background:#fff;border:1px solid #dce8ef;box-shadow:0 8px 26px rgba(14,54,78,.07)}
+    .purchase-step .step-num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#0a5f8f;color:#fff;font-weight:900;margin-bottom:10px}
+    .purchase-step h3{margin:0 0 8px}.purchase-step p{margin:0;color:#46606f}
+    .purchase-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+    .purchase-summary div{padding:16px;border-radius:14px;background:#eef6fa;border:1px solid #d4e4ed;text-align:center}
+    .purchase-summary strong{display:block;color:#123f59;margin-bottom:4px}.purchase-summary span{font-weight:800;color:#0a5f8f}
+    @media(max-width:900px){.purchase-grid{grid-template-columns:1fr 1fr}.purchase-summary{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.purchase-grid,.purchase-summary{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -34,11 +45,16 @@
         <p class="lead">Une application conçue pour gérer plusieurs modèles bancaires, préparer des séries de chèques, contrôler leur mise en page et conserver un PDF GED associé à chaque opération.</p>
         <div class="actions">
           <a class="btn primary" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger pour Windows 64 bits</a>
-          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%20Pouvez-vous%20m%27indiquer%20les%20modalit%C3%A9s%20de%20paiement%20et%20d%27activation%20%3F" target="_blank" rel="noopener">💬 Acheter sur WhatsApp</a>
+          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 Acheter sur WhatsApp</a>
           <a class="btn secondary" href="#captures">Voir l’application</a>
         </div>
+        <div class="commercial-note">
+          <span>✓ Essai gratuit 90 jours</span>
+          <span>3 000 DA • paiement unique</span>
+          <span>Licence permanente</span>
+        </div>
         <div class="download-counter" aria-live="polite"><span class="counter-dot">●</span><span class="cheques-download-count">Chargement du compteur...</span></div>
-        <p class="small">Windows 10 / 11 • Version 64 bits</p>
+        <p class="small">Windows 10 / 11 • Version 64 bits • Aucune carte bancaire demandée pour l’essai</p>
       </div>
       <div class="hero-shot">
         <img src="assets/screenshots/01-impression.jpg" alt="Chèques Tabbi en mode Impression">
@@ -174,13 +190,41 @@
       </div>
     </section>
 
+    <section class="section wrap" id="achat">
+      <div class="section-head">
+        <p class="eyebrow">Essai, achat et activation</p>
+        <h2>Essayez 90 jours gratuitement</h2>
+        <p>Aucune carte bancaire n’est demandée pour l’essai. L’activation peut être effectuée à tout moment. Après achat, la licence est permanente pour l’ordinateur activé.</p>
+      </div>
+
+      <div class="purchase-summary">
+        <div><strong>Essai gratuit</strong><span>90 jours</span></div>
+        <div><strong>Prix</strong><span>3 000 DA</span></div>
+        <div><strong>Licence</strong><span>Permanente</span></div>
+        <div><strong>Abonnement</strong><span>Aucun</span></div>
+      </div>
+
+      <div class="purchase-grid">
+        <article class="purchase-step"><span class="step-num">1</span><h3>Installez Chèques Tabbi</h3><p>Téléchargez l’installateur et profitez d’abord de la période d’essai gratuite de 90 jours.</p></article>
+        <article class="purchase-step"><span class="step-num">2</span><h3>Cliquez sur ACTIVER</h3><p>La fenêtre d’activation affiche le <strong>Code Machine</strong> propre à votre ordinateur.</p></article>
+        <article class="purchase-step"><span class="step-num">3</span><h3>Contactez-nous sur WhatsApp</h3><p>Le message WhatsApp est déjà préparé avec « Code Machine : ». Ajoutez votre code puis envoyez le message.</p></article>
+        <article class="purchase-step"><span class="step-num">4</span><h3>Effectuez le règlement</h3><p>Prix : <strong>3 000 DA</strong>. Les modalités de paiement vous sont communiquées en privé sur WhatsApp.</p></article>
+        <article class="purchase-step"><span class="step-num">5</span><h3>Envoyez la preuve</h3><p>Après règlement, envoyez sur WhatsApp la preuve de paiement avec votre Code Machine.</p></article>
+        <article class="purchase-step"><span class="step-num">6</span><h3>Recevez et activez la licence</h3><p>Vous recevez le fichier de licence <strong>.lic</strong> à importer dans Chèques Tabbi pour activer définitivement l’application.</p></article>
+      </div>
+
+      <div style="text-align:center;margin-top:28px">
+        <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
+      </div>
+    </section>
+
     <section class="download">
       <div class="wrap download-inner">
-        <div><p class="eyebrow light-eyebrow">Windows 64 bits</p><h2>Installer Chèques Tabbi</h2><p>Téléchargez l’installateur puis contactez Tabbi Applications sur WhatsApp pour les modalités de paiement et d’activation.</p></div>
+        <div><p class="eyebrow light-eyebrow">Windows 64 bits</p><h2>Installer Chèques Tabbi</h2><p>Téléchargez l’installateur officiel. L’essai gratuit dure 90 jours. Pour l’achat et l’activation, contactez ensuite Tabbi Applications sur WhatsApp.</p></div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
           <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
             <a class="btn light" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger le Setup x64</a>
-            <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%20Pouvez-vous%20m%27indiquer%20les%20modalit%C3%A9s%20de%20paiement%20et%20d%27activation%20%3F" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
+            <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
           </div>
           <div class="download-counter" aria-live="polite"><span class="counter-dot">●</span><span class="cheques-download-count">Chargement du compteur...</span></div>
         </div>
