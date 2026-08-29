@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="G3-Tabbi — préparation de l'état détaillé annuel des clients G3, génération Excel et PDF, essai gratuit 10 jours, licence permanente 2 000 DA.">
   <title>G3-Tabbi — État détaillé des clients G3</title>
+
+  <!-- Google Analytics 4 - G3-Tabbi -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKFZN0HLEP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZKFZN0HLEP');
+  </script>
+
   <link rel="stylesheet" href="style.css?v=20260829-2">
   <style>
     .download-counter {
@@ -180,6 +190,17 @@
         .catch(() => {
           counters.forEach(el => { el.textContent = 'Compteur GitHub temporairement indisponible'; });
         });
+
+      document.querySelectorAll('a[href*="G3-Tabbi_Setup_x64.exe"]').forEach(link => {
+        link.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'g3_download_click', {
+              file_name: 'G3-Tabbi_Setup_x64.exe',
+              link_url: link.href
+            });
+          }
+        });
+      });
     })();
   </script>
 </body>
