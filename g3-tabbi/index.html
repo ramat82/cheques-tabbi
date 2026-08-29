@@ -6,6 +6,30 @@
   <meta name="description" content="G3-Tabbi — préparation de l'état détaillé annuel des clients G3, génération Excel et PDF, essai gratuit 10 jours, licence permanente 2 000 DA.">
   <title>G3-Tabbi — État détaillé des clients G3</title>
   <link rel="stylesheet" href="style.css?v=20260829-2">
+  <style>
+    .download-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.28);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .counter-dot {
+      font-size: 11px;
+      color: #7ee787;
+    }
+    .download-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -19,6 +43,10 @@
           <a href="https://github.com/ramat82/cheques-tabbi/releases/download/g3-tabbi-v19.10.20/G3-Tabbi_Setup_x64.exe" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 24px;border-radius:10px;background:#ffffff;color:#0a3f73 !important;border:2px solid #ffffff;text-decoration:none !important;font-weight:900;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,.18);">⬇ Télécharger G3-Tabbi</a>
           <a class="btn primary" href="#telechargement">Essai gratuit 10 jours</a>
           <a class="btn secondary" href="#paiement">Voir comment acheter</a>
+        </div>
+        <div class="download-counter" aria-live="polite">
+          <span class="counter-dot">●</span>
+          <span class="download-count">Chargement du compteur...</span>
         </div>
       </div>
       <div class="price-card">
@@ -107,7 +135,13 @@
           <h2>Télécharger G3-Tabbi</h2>
           <p>Téléchargez l'installateur officiel pour Windows. L'essai gratuit de 10 jours démarre au premier lancement.</p>
         </div>
-        <a href="https://github.com/ramat82/cheques-tabbi/releases/download/g3-tabbi-v19.10.20/G3-Tabbi_Setup_x64.exe" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 24px;border-radius:10px;background:#ffffff;color:#0a3f73 !important;border:2px solid #ffffff;text-decoration:none !important;font-weight:900;font-size:18px;min-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.18);">⬇ Télécharger G3-Tabbi</a>
+        <div class="download-cta">
+          <a href="https://github.com/ramat82/cheques-tabbi/releases/download/g3-tabbi-v19.10.20/G3-Tabbi_Setup_x64.exe" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 24px;border-radius:10px;background:#ffffff;color:#0a3f73 !important;border:2px solid #ffffff;text-decoration:none !important;font-weight:900;font-size:18px;min-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.18);">⬇ Télécharger G3-Tabbi</a>
+          <div class="download-counter" aria-live="polite">
+            <span class="counter-dot">●</span>
+            <span class="download-count">Chargement du compteur...</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -118,5 +152,35 @@
       <div><a href="mailto:tabbiamar1963@gmail.com">tabbiamar1963@gmail.com</a><br><span>© 2026</span></div>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const apiUrl = 'https://api.github.com/repos/ramat82/cheques-tabbi/releases/tags/g3-tabbi-v19.10.20';
+      const assetName = 'G3-Tabbi_Setup_x64.exe';
+      const counters = document.querySelectorAll('.download-count');
+
+      fetch(apiUrl, { headers: { Accept: 'application/vnd.github+json' } })
+        .then(response => {
+          if (!response.ok) throw new Error('GitHub API error');
+          return response.json();
+        })
+        .then(release => {
+          const asset = Array.isArray(release.assets)
+            ? release.assets.find(item => item.name === assetName)
+            : null;
+          if (!asset || typeof asset.download_count !== 'number') {
+            throw new Error('Download counter unavailable');
+          }
+          const count = asset.download_count;
+          const text = count === 1
+            ? '1 téléchargement'
+            : `${count.toLocaleString('fr-FR')} téléchargements`;
+          counters.forEach(el => { el.textContent = text; });
+        })
+        .catch(() => {
+          counters.forEach(el => { el.textContent = 'Compteur GitHub temporairement indisponible'; });
+        });
+    })();
+  </script>
 </body>
 </html>
