@@ -16,6 +16,10 @@
   </script>
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366!important;color:#fff!important;border:2px solid #25D366!important;text-decoration:none!important;font-weight:900}
+    .btn-whatsapp:hover{filter:brightness(.94)}
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -27,6 +31,7 @@
         <p class="lead">Une application conçue pour gérer plusieurs modèles bancaires, préparer des séries de chèques, contrôler leur mise en page et conserver un PDF GED associé à chaque opération.</p>
         <div class="actions">
           <a class="btn primary" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger pour Windows 64 bits</a>
+          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%20Pouvez-vous%20m%27indiquer%20les%20modalit%C3%A9s%20de%20paiement%20et%20d%27activation%20%3F" target="_blank" rel="noopener">💬 Acheter sur WhatsApp</a>
           <a class="btn secondary" href="#captures">Voir l’application</a>
         </div>
         <p class="small">Windows 10 / 11 • Version 64 bits</p>
@@ -167,8 +172,11 @@
 
     <section class="download">
       <div class="wrap download-inner">
-        <div><p class="eyebrow light-eyebrow">Windows 64 bits</p><h2>Installer Chèques Tabbi</h2><p>Téléchargez l’installateur depuis la version publique officielle.</p></div>
-        <a class="btn light" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger le Setup x64</a>
+        <div><p class="eyebrow light-eyebrow">Windows 64 bits</p><h2>Installer Chèques Tabbi</h2><p>Téléchargez l’installateur puis contactez Tabbi Applications sur WhatsApp pour les modalités de paiement et d’activation.</p></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+          <a class="btn light" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger le Setup x64</a>
+          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%20Pouvez-vous%20m%27indiquer%20les%20modalit%C3%A9s%20de%20paiement%20et%20d%27activation%20%3F" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
+        </div>
       </div>
     </section>
   </main>
@@ -182,5 +190,15 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('[data-whatsapp="cheques"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'cheques_whatsapp_click', { contact_method: 'whatsapp' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
