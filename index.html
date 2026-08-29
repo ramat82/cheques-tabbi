@@ -19,6 +19,9 @@
   <style>
     .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366!important;color:#fff!important;border:2px solid #25D366!important;text-decoration:none!important;font-weight:900}
     .btn-whatsapp:hover{filter:brightness(.94)}
+    .download-counter{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:800;font-size:14px}
+    .download-counter.dark{background:#eef5f9;border-color:#c8dbe7;color:#17394d}
+    .counter-dot{font-size:11px;color:#31c46d}
   </style>
 </head>
 <body>
@@ -34,6 +37,7 @@
           <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%20Pouvez-vous%20m%27indiquer%20les%20modalit%C3%A9s%20de%20paiement%20et%20d%27activation%20%3F" target="_blank" rel="noopener">💬 Acheter sur WhatsApp</a>
           <a class="btn secondary" href="#captures">Voir l’application</a>
         </div>
+        <div class="download-counter" aria-live="polite"><span class="counter-dot">●</span><span class="cheques-download-count">Chargement du compteur...</span></div>
         <p class="small">Windows 10 / 11 • Version 64 bits</p>
       </div>
       <div class="hero-shot">
@@ -173,9 +177,12 @@
     <section class="download">
       <div class="wrap download-inner">
         <div><p class="eyebrow light-eyebrow">Windows 64 bits</p><h2>Installer Chèques Tabbi</h2><p>Téléchargez l’installateur puis contactez Tabbi Applications sur WhatsApp pour les modalités de paiement et d’activation.</p></div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-          <a class="btn light" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger le Setup x64</a>
-          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%20Pouvez-vous%20m%27indiquer%20les%20modalit%C3%A9s%20de%20paiement%20et%20d%27activation%20%3F" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+          <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+            <a class="btn light" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger le Setup x64</a>
+            <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%20Pouvez-vous%20m%27indiquer%20les%20modalit%C3%A9s%20de%20paiement%20et%20d%27activation%20%3F" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
+          </div>
+          <div class="download-counter" aria-live="polite"><span class="counter-dot">●</span><span class="cheques-download-count">Chargement du compteur...</span></div>
         </div>
       </div>
     </section>
@@ -199,6 +206,32 @@
         }
       });
     });
+
+    (() => {
+      const apiUrl = 'https://api.github.com/repos/ramat82/cheques-tabbi/releases/latest';
+      const assetName = 'ChequesTabbi_Setup_x64.exe';
+      const counters = document.querySelectorAll('.cheques-download-count');
+
+      fetch(apiUrl, { headers: { Accept: 'application/vnd.github+json' } })
+        .then(response => {
+          if (!response.ok) throw new Error('GitHub API error');
+          return response.json();
+        })
+        .then(release => {
+          const asset = Array.isArray(release.assets)
+            ? release.assets.find(item => item.name === assetName)
+            : null;
+          if (!asset || typeof asset.download_count !== 'number') {
+            throw new Error('Download counter unavailable');
+          }
+          const count = asset.download_count;
+          const text = count === 1 ? '1 téléchargement' : `${count.toLocaleString('fr-FR')} téléchargements`;
+          counters.forEach(el => { el.textContent = text; });
+        })
+        .catch(() => {
+          counters.forEach(el => { el.textContent = 'Compteur GitHub temporairement indisponible'; });
+        });
+    })();
   </script>
 </body>
 </html>
