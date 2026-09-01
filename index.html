@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Chèques Tabbi — préparation, impression, réglage et archivage PDF GED de chèques sous Windows. Essai gratuit 90 jours, licence permanente 3 000 DA.">
-  <title>Chèques Tabbi — Impression et GED</title>
+  <meta name="description" content="Chèques Tabbi V2 — préparation, impression, réglage et archivage PDF GED de chèques sous Windows. Essai gratuit 30 jours, licence permanente 3 000 DA.">
+  <title>Chèques Tabbi V2 — Impression et GED</title>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PDGG4K5FS"></script>
@@ -35,8 +35,9 @@
     .purchase-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
     .purchase-summary div{padding:16px;border-radius:14px;background:#eef6fa;border:1px solid #d4e4ed;text-align:center}
     .purchase-summary strong{display:block;color:#123f59;margin-bottom:4px}.purchase-summary span{font-weight:800;color:#0a5f8f}
+    .version-pill{display:inline-flex;align-items:center;justify-content:center;margin-left:10px;padding:5px 10px;border-radius:999px;background:#7c3aed;color:#fff;font-size:.42em;vertical-align:middle;white-space:nowrap}
     @media(max-width:900px){.purchase-grid{grid-template-columns:1fr 1fr}.purchase-summary{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){.hero .actions{grid-template-columns:1fr}.hero .actions .hero-download{grid-column:auto}.hero .actions .btn{width:100%}.commercial-note{gap:8px}.commercial-note span,.commercial-note .download-counter{font-size:12px;padding:8px 11px}.purchase-grid,.purchase-summary{grid-template-columns:1fr}}
+    @media(max-width:640px){.hero .actions{grid-template-columns:1fr}.hero .actions .hero-download{grid-column:auto}.hero .actions .btn{width:100%}.commercial-note{gap:8px}.commercial-note span,.commercial-note .download-counter{font-size:12px;padding:8px 11px}.purchase-grid,.purchase-summary{grid-template-columns:1fr}.version-pill{display:inline-flex;margin:8px 0 0 0}}
   </style>
 </head>
 <body>
@@ -44,22 +45,22 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="badge">Application Windows</span>
-        <h1>Chèques Tabbi</h1>
+        <h1>Chèques Tabbi <span class="version-pill">Version 2</span></h1>
         <p class="subtitle">Préparez, imprimez et archivez vos chèques simplement.</p>
         <p class="lead">Une application conçue pour gérer plusieurs modèles bancaires, préparer des séries de chèques, contrôler leur mise en page et conserver un PDF GED associé à chaque opération.</p>
         <div class="actions">
-          <a class="btn primary hero-download" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">
+          <a class="btn primary hero-download" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/FR-CHEQUEV2.exe">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 15v4h14v-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Télécharger pour Windows 64 bits
+            Télécharger Chèques Tabbi V2 — Windows 64 bits
           </a>
-          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">
+          <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi%20V2.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8.6 7.8c.4-.5.8-.4 1.1-.1l1.1 1.5c.2.3.2.6 0 .9l-.6.8c.8 1.6 1.9 2.7 3.6 3.5l.8-.7c.3-.2.6-.2.9 0l1.5 1.1c.4.3.4.7.1 1.1-.8 1-1.8 1.4-3 1.1-3.3-.9-6.1-3.6-7-7-.3-1.1.2-2.3 1.5-3.2Z" fill="currentColor"/></svg>
             Acheter sur WhatsApp
           </a>
           <a class="btn secondary" href="#captures">Voir l’application</a>
         </div>
         <div class="commercial-note">
-          <span>✓ Essai gratuit 90 jours</span>
+          <span>✓ Essai gratuit 30 jours</span>
           <span>3 000 DA - paiement unique</span>
           <span>Licence permanente</span>
           <div class="download-counter" aria-live="polite"><span class="counter-dot">•</span><span class="cheques-download-count">Chargement...</span></div>
@@ -79,8 +80,8 @@
     <div style="max-width:760px;margin:0 auto;background:#ffffff;border:1px solid #ded7f7;border-radius:18px;box-shadow:0 8px 24px rgba(74,48,130,.10);padding:24px;">
       <h2 style="margin:0 0 16px;text-align:center;color:#5b21b6;font-size:24px;">💬 Votre avis sur Chèques Tabbi</h2>
       <form action="https://formsubmit.co/tabbiamar1963@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Nouvel avis - Chèques Tabbi">
-        <input type="hidden" name="Application" value="Chèques Tabbi">
+        <input type="hidden" name="_subject" value="Nouvel avis - Chèques Tabbi V2">
+        <input type="hidden" name="Application" value="Chèques Tabbi V2">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://ramat82.github.io/cheques-tabbi/?avis=merci">
         <textarea name="Avis" required rows="6" placeholder="Écrivez votre avis ou votre suggestion ici…" style="width:100%;box-sizing:border-box;resize:vertical;padding:16px;border:2px solid #d9d2f1;border-radius:12px;font:inherit;font-size:17px;line-height:1.5;outline:none;background:#fff;color:#172033;"></textarea>
@@ -102,8 +103,8 @@
         <article class="feature-card"><div class="icon">✓</div><h3>Préparation</h3><p>Saisissez bénéficiaire, montant, ville, date et commentaire puis préparez plusieurs chèques à l’avance.</p></article>
         <article class="feature-card"><div class="icon">A</div><h3>Montant en lettres</h3><p>Le montant numérique est automatiquement converti en toutes lettres et reporté sur le modèle.</p></article>
         <article class="feature-card"><div class="icon">▣</div><h3>Modèles bancaires</h3><p>Choisissez votre banque et adaptez chaque modèle aux dimensions et positions réelles du chèque.</p></article>
-        <article class="feature-card"><div class="icon">CSV</div><h3>Import CSV</h3><p>Importez une liste de chèques puis chargez et imprimez les opérations une par une.</p></article>
-        <article class="feature-card"><div class="icon">PDF</div><h3>PDF GED</h3><p>Générez le PDF d’archive associé au numéro du chèque après l’impression.</p></article>
+        <article class="feature-card"><div class="icon">XLSX</div><h3>Excel / CSV</h3><p>Importez et exportez vos listes de préparation au format Excel ou CSV.</p></article>
+        <article class="feature-card"><div class="icon">PDF</div><h3>PDF GED</h3><p>Après l’impression physique, le PDF d’archive officiel est associé au numéro du chèque.</p></article>
         <article class="feature-card"><div class="icon">↺</div><h3>Historique</h3><p>Retrouvez les chèques traités avec numéro, bénéficiaire, montant, ville, date et commentaire.</p></article>
       </div>
     </section>
@@ -151,7 +152,7 @@
         <div class="section-head center">
           <p class="eyebrow">Captures réelles</p>
           <h2>Découvrez l’application</h2>
-          <p>Ces images sont les captures JPG réelles de Chèques Tabbi, sans montage ni image intégrée dans le code.</p>
+          <p>Ces images sont les captures JPG réelles de Chèques Tabbi.</p>
         </div>
 
         <article class="showcase">
@@ -222,19 +223,19 @@
     <section class="section wrap" id="achat">
       <div class="section-head">
         <p class="eyebrow">Essai, achat et activation</p>
-        <h2>Essayez 90 jours gratuitement</h2>
+        <h2>Essayez 30 jours gratuitement</h2>
         <p>Aucune carte bancaire n’est demandée pour l’essai. L’activation peut être effectuée à tout moment. Après achat, la licence est permanente pour l’ordinateur activé.</p>
       </div>
 
       <div class="purchase-summary">
-        <div><strong>Essai gratuit</strong><span>90 jours</span></div>
+        <div><strong>Essai gratuit</strong><span>30 jours</span></div>
         <div><strong>Prix</strong><span>3 000 DA</span></div>
         <div><strong>Licence</strong><span>Permanente</span></div>
         <div><strong>Abonnement</strong><span>Aucun</span></div>
       </div>
 
       <div class="purchase-grid">
-        <article class="purchase-step"><span class="step-num">1</span><h3>Installez Chèques Tabbi</h3><p>Téléchargez l’installateur et profitez d’abord de la période d’essai gratuite de 90 jours.</p></article>
+        <article class="purchase-step"><span class="step-num">1</span><h3>Installez Chèques Tabbi V2</h3><p>Téléchargez l’installateur et profitez d’abord de la période d’essai gratuite de 30 jours.</p></article>
         <article class="purchase-step"><span class="step-num">2</span><h3>Cliquez sur ACTIVER</h3><p>La fenêtre d’activation affiche le <strong>Code Machine</strong> propre à votre ordinateur.</p></article>
         <article class="purchase-step"><span class="step-num">3</span><h3>Contactez-nous sur WhatsApp</h3><p>Le message WhatsApp est déjà préparé avec « Code Machine : ». Ajoutez votre code puis envoyez le message.</p></article>
         <article class="purchase-step"><span class="step-num">4</span><h3>Effectuez le règlement</h3><p>Prix : <strong>3 000 DA</strong>. Les modalités de paiement vous sont communiquées en privé sur WhatsApp.</p></article>
@@ -243,17 +244,17 @@
       </div>
 
       <div style="text-align:center;margin-top:28px">
-        <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
+        <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi%20V2.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
       </div>
     </section>
 
     <section class="download">
       <div class="wrap download-inner">
-        <div><p class="eyebrow light-eyebrow">Windows 64 bits</p><h2>Installer Chèques Tabbi</h2><p>Téléchargez l’installateur officiel. L’essai gratuit dure 90 jours. Pour l’achat et l’activation, contactez ensuite Tabbi Applications sur WhatsApp.</p></div>
+        <div><p class="eyebrow light-eyebrow">Windows 64 bits • Version 2</p><h2>Installer Chèques Tabbi V2</h2><p>Téléchargez l’installateur officiel. L’essai gratuit dure 30 jours. Pour l’achat et l’activation, contactez ensuite Tabbi Applications sur WhatsApp.</p></div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
           <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-            <a class="btn light" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/ChequesTabbi_Setup_x64.exe">Télécharger le Setup x64</a>
-            <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
+            <a class="btn light" href="https://github.com/ramat82/cheques-tabbi/releases/latest/download/FR-CHEQUEV2.exe">Télécharger FR-CHEQUEV2</a>
+            <a class="btn btn-whatsapp" data-whatsapp="cheques" href="https://wa.me/213656687312?text=Bonjour%2C%20je%20souhaite%20acheter%20Ch%C3%A8ques-Tabbi%20V2.%0ACode%20Machine%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp — Acheter / Activer</a>
           </div>
           <div class="download-counter" aria-live="polite"><span class="counter-dot">●</span><span class="cheques-download-count">Chargement du compteur...</span></div>
         </div>
@@ -263,7 +264,7 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <div><strong>Chèques Tabbi</strong><br><span>Préparation • Impression • PDF GED • Historique</span></div>
+      <div><strong>Chèques Tabbi V2</strong><br><span>Préparation • Impression • Excel/CSV • PDF GED • Historique</span></div>
       <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
         <a href="https://lookerstudio.google.com/reporting/dd75325d-7d11-4650-a794-55b19604678f/page/0vP7F" target="_blank" rel="noopener nofollow" style="color:#dcecf6;text-decoration:none;font-weight:700;opacity:.82">🔒 Espace propriétaire</a>
         <span>© 2026</span>
@@ -282,7 +283,7 @@
 
     (() => {
       const apiUrl = 'https://api.github.com/repos/ramat82/cheques-tabbi/releases/latest';
-      const assetName = 'ChequesTabbi_Setup_x64.exe';
+      const assetName = 'FR-CHEQUEV2.exe';
       const counters = document.querySelectorAll('.cheques-download-count');
 
       fetch(apiUrl, { headers: { Accept: 'application/vnd.github+json' } })
