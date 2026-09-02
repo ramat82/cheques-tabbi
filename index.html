@@ -21,10 +21,9 @@
     body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#f7fbfd;line-height:1.65}
     .wrap{width:min(1180px,92%);margin:0 auto}
     .topbar{background:#172033;color:#fff;padding:10px 0;font-size:14px}
-    .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-    .lang{display:inline-flex;gap:8px;align-items:center}
-    .lang a{color:#fff;text-decoration:none;border:1px solid #ffffff55;border-radius:999px;padding:6px 12px;font-weight:800}
-    .lang a.active{background:#fff;color:#172033}
+    .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+    .app-switch{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:10px 24px;background:#7041d9;color:#fff;text-decoration:none;border:2px solid #ffffffcc;border-radius:14px;font-size:18px;font-weight:900;box-shadow:0 6px 18px #00000028}
+    .app-switch:hover{transform:translateY(-1px);filter:brightness(1.06)}
     .hero{background:linear-gradient(135deg,#9fd7df 0%,#d5eee9 58%,#eaf6f3 100%);border-bottom:1px solid #88c5c8;padding:62px 0 52px}
     .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:42px;align-items:center}
     .badge{display:inline-block;background:#fff;border:1px solid #8ac7e5;border-radius:999px;padding:7px 14px;font-weight:800}
@@ -69,14 +68,14 @@
     footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
     footer a{color:#dcecf6}
     @media(max-width:900px){.hero-grid,.shot,.shot.reverse{grid-template-columns:1fr}.shot.reverse .image{order:0}.features,.steps{grid-template-columns:1fr 1fr}.summary{grid-template-columns:1fr 1fr}}
-    @media(max-width:620px){.features,.steps,.summary{grid-template-columns:1fr}.download .wrap{flex-direction:column;align-items:stretch}.actions .btn{width:100%}}
+    @media(max-width:620px){.features,.steps,.summary{grid-template-columns:1fr}.download .wrap{flex-direction:column;align-items:stretch}.actions .btn,.app-switch{width:100%}}
   </style>
 </head>
 <body>
   <div class="topbar">
     <div class="wrap">
-      <div>Chèques Tabbi V2 — Windows 64 bits</div>
-      <div class="lang"><a class="active" href="./">Français</a><a href="ar/">العربية</a></div>
+      <div><strong>Chèques Tabbi V2 — Application française</strong></div>
+      <a class="app-switch" href="ar/" lang="ar" dir="rtl">النسخة العربية للتطبيق</a>
     </div>
   </div>
 
