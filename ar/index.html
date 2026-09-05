@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Chèques Tabbi V3 بالعربية — إعداد وطباعة وأرشفة الشيكات على Windows. تجربة مجانية 30 يوماً، رخصة دائمة بسعر 3000 دج لكل نسخة.">
-  <title>Chèques Tabbi V3 — النسخة العربية</title>
-
+  <meta name="description" content="Chèques Tabbi V3-2 بالعربية — إعداد وطباعة وتفعيل عن بعد وأرشفة الشيكات على Windows. تجربة مجانية 30 يوماً، رخصة دائمة بسعر 3000 دج لكل نسخة.">
+  <title>Chèques Tabbi V3-2 — النسخة العربية</title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PDGG4K5FS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,207 +12,77 @@
     gtag('js', new Date());
     gtag('config', 'G-8PDGG4K5FS');
   </script>
-
   <style>
     :root{--pink:#d24f80;--purple:#7041d9;--teal:#159b89;--blue:#2375e9;--ink:#172033;--soft:#fff6fa;--line:#efd0dd;--white:#fff;--green:#22c653;--red:#c92b2b}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:#fff7fa;color:var(--ink);line-height:1.8}
-    .wrap{width:min(1180px,92%);margin:auto}
-    .topbar{background:#172033;color:#fff;padding:10px 0;font-size:14px}
-    .topbar .wrap{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
-    .app-switch{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:10px 24px;background:#1558a6;color:#fff;text-decoration:none;border:2px solid #ffffffcc;border-radius:14px;font-size:18px;font-weight:900;box-shadow:0 6px 18px #00000028;direction:ltr}
-    .app-switch:hover{transform:translateY(-1px);filter:brightness(1.06)}
-    .hero{background:linear-gradient(135deg,#d24f80 0%,#e478a0 55%,#f8dce7 100%);padding:64px 0 50px;border-bottom:1px solid #cc3e73}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
-    h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.05;margin:10px 0;color:#10233c}
-    .version{display:inline-block;background:#7041d9;color:white;border-radius:999px;padding:5px 12px;font-size:.35em;vertical-align:middle}
-    .badge{display:inline-block;background:#fff;border-radius:999px;padding:7px 14px;font-weight:900;color:#6a2450}
-    .lead{font-size:1.15rem;color:#3e2940;max-width:700px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:12px 22px;border-radius:13px;text-decoration:none;font-weight:900;border:2px solid transparent}
-    .primary{background:#1558a6;color:#fff}
-    .whatsapp{background:var(--green);color:#fff}
-    .secondary{background:#fff;color:#5e2d91;border-color:#fff}
-    .hero-card{background:#fff;border-radius:20px;padding:10px;box-shadow:0 20px 50px #68223d33}
-    .hero-card img{width:100%;display:block;border-radius:12px}
-    .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-    .pill{background:#fff;padding:8px 14px;border-radius:999px;font-weight:900;border:1px solid #ffffffaa}
-    .counter{background:#fff;padding:8px 14px;border-radius:999px;font-weight:900}
-    .license-warning{margin-top:24px;background:#fff3cd;border:2px solid #e4a900;color:#5b4500;border-radius:16px;padding:16px 18px;font-weight:900;font-size:1.03rem}
-    section{padding:65px 0}
-    .section-head{text-align:center;max-width:820px;margin:0 auto 30px}
-    .section-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.2;margin:5px 0;color:#3f215f}
-    .eyebrow{color:#a22762;font-weight:900;margin:0;text-transform:uppercase;letter-spacing:.06em}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 28px #66213b0b}
-    .card h3{margin:4px 0 7px;color:#4b2e83}
-    .card p{margin:0;color:#5e5360}
-    .gallery{background:#f8e5ed}
-    .shot{display:grid;grid-template-columns:1.45fr .55fr;gap:28px;align-items:center;margin:28px 0 48px}
-    .shot.reverse{grid-template-columns:.55fr 1.45fr}
-    .shot.reverse .image{order:2}
-    .image{display:block;background:#fff;padding:8px;border-radius:18px;border:1px solid #e6b7c9;box-shadow:0 15px 38px #70244018}
-    .image img{width:100%;height:auto;display:block;border-radius:11px}
-    .shot h3{font-size:1.65rem;margin:8px 0;color:#4b2e83}
-    .shot p{color:#5e5360}
-    .purchase{background:#fff}
-    .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:25px 0}
-    .summary div{background:#fff3f8;border:1px solid #eccbd8;border-radius:15px;padding:16px;text-align:center}
-    .summary strong{display:block;color:#5b2454}.summary span{font-weight:900;color:#a22762}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
-    .num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#7041d9;color:#fff;font-weight:900;margin-bottom:8px}
-    .download{background:linear-gradient(135deg,#7041d9,#4b2e83);color:#fff}
-    .download .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:48px 0}
-    .download h2{margin:0 0 6px;font-size:2.2rem}
-    footer{background:#172033;color:#dfe6ef;padding:25px 0}
-    footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:#fff7fa;color:var(--ink);line-height:1.8}.wrap{width:min(1180px,92%);margin:auto}
+    .topbar{background:#172033;color:#fff;padding:10px 0;font-size:14px}.topbar .wrap{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+    .app-switch{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:10px 24px;background:#1558a6;color:#fff;text-decoration:none;border:2px solid #ffffffcc;border-radius:14px;font-size:18px;font-weight:900;box-shadow:0 6px 18px #00000028;direction:ltr}.app-switch:hover,.btn:hover{transform:translateY(-1px);filter:brightness(1.04)}
+    .hero{background:linear-gradient(135deg,#d24f80 0%,#e478a0 55%,#f8dce7 100%);padding:64px 0 50px;border-bottom:1px solid #cc3e73}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+    h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.05;margin:10px 0;color:#10233c}.version{display:inline-block;background:#7041d9;color:white;border-radius:999px;padding:5px 12px;font-size:.35em;vertical-align:middle}.badge{display:inline-block;background:#fff;border-radius:999px;padding:7px 14px;font-weight:900;color:#6a2450}.lead{font-size:1.15rem;color:#3e2940;max-width:700px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:12px 22px;border-radius:13px;text-decoration:none;font-weight:900;border:2px solid transparent;transition:.15s}.primary{background:#1558a6;color:#fff}.whatsapp{background:var(--green);color:#fff}.secondary{background:#fff;color:#5e2d91;border-color:#fff}.gmail{background:#fff;color:#172033;border-color:#ddd;box-shadow:0 4px 14px #00000012;direction:ltr}.gmail svg{width:25px;height:20px;flex:none}
+    .hero-card{background:#fff;border-radius:20px;padding:10px;box-shadow:0 20px 50px #68223d33}.hero-card img{width:100%;display:block;border-radius:12px}.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill,.counter{background:#fff;padding:8px 14px;border-radius:999px;font-weight:900;border:1px solid #ffffffaa}
+    .license-warning,.update-warning{margin-top:18px;border-radius:16px;padding:16px 18px;font-weight:900;font-size:1.03rem}.license-warning{background:#fff3cd;border:2px solid #e4a900;color:#5b4500}.update-warning{background:#eef4ff;border:2px solid #2375e9;color:#173f73}
+    section{padding:65px 0}.section-head{text-align:center;max-width:820px;margin:0 auto 30px}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.2;margin:5px 0;color:#3f215f}.eyebrow{color:#a22762;font-weight:900;margin:0;text-transform:uppercase;letter-spacing:.06em}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 28px #66213b0b}.card h3{margin:4px 0 7px;color:#4b2e83}.card p{margin:0;color:#5e5360}
+    .gallery{background:#f8e5ed}.shot{display:grid;grid-template-columns:1.45fr .55fr;gap:28px;align-items:center;margin:28px 0 48px}.shot.reverse{grid-template-columns:.55fr 1.45fr}.shot.reverse .image{order:2}.image{display:block;background:#fff;padding:8px;border-radius:18px;border:1px solid #e6b7c9;box-shadow:0 15px 38px #70244018}.image img{width:100%;height:auto;display:block;border-radius:11px}.shot h3{font-size:1.65rem;margin:8px 0;color:#4b2e83}.shot p{color:#5e5360}
+    .purchase{background:#fff}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:25px 0}.summary div{background:#fff3f8;border:1px solid #eccbd8;border-radius:15px;padding:16px;text-align:center}.summary strong{display:block;color:#5b2454}.summary span{font-weight:900;color:#a22762}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#7041d9;color:#fff;font-weight:900;margin-bottom:8px}
+    .download{background:linear-gradient(135deg,#7041d9,#4b2e83);color:#fff}.download .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:48px 0}.download h2{margin:0 0 6px;font-size:2.2rem}footer{background:#172033;color:#dfe6ef;padding:25px 0}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:#dfe6ef}
     @media(max-width:900px){.hero-grid,.shot,.shot.reverse{grid-template-columns:1fr}.shot.reverse .image{order:0}.features,.steps{grid-template-columns:1fr 1fr}.summary{grid-template-columns:1fr 1fr}}
     @media(max-width:620px){.features,.steps,.summary{grid-template-columns:1fr}.download .wrap{flex-direction:column;align-items:stretch}.actions .btn,.app-switch{width:100%}}
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="wrap">
-      <div><strong>Chèques Tabbi V3 — التطبيق العربي</strong></div>
-      <a class="app-switch" href="../" lang="fr" dir="ltr">Version française de l’application</a>
+  <div class="topbar"><div class="wrap"><div><strong>Chèques Tabbi V3-2 — التطبيق العربي</strong></div><a class="app-switch" href="../" lang="fr" dir="ltr">Version française de l’application</a></div></div>
+  <header class="hero"><div class="wrap hero-grid"><div>
+    <span class="badge">برنامج Windows</span>
+    <h1>Chèques Tabbi <span class="version">الإصدار 3-2</span></h1>
+    <p class="lead">إعداد الشيكات وطباعتها وأرشفتها بسهولة، مع نماذج بنكية متعددة، المبلغ بالحروف، Excel / CSV، المعاينة والأرشيف PDF GED.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/ramat82/cheques-tabbi/releases/download/V3-2/CT_AR_V3_2_Setup.exe">⬇ تحميل آخر نسخة عربية</a>
+      <a class="btn whatsapp" data-whatsapp="ar" href="https://wa.me/213656687312?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B4%D8%B1%D8%A7%D8%A1%20%2F%20%D8%AA%D9%81%D8%B9%D9%8A%D9%84%20Ch%C3%A8ques%20Tabbi%20V3-2%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9.%0A%D8%B1%D9%85%D8%B2%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2%20%3A%20" target="_blank" rel="noopener">💬 شراء / تفعيل عبر WhatsApp</a>
+      <a class="btn gmail" href="mailto:tabbiamar1963@gmail.com?subject=Activation%20Ch%C3%A8ques%20Tabbi%20V3-2%20AR&body=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%8C%0A%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B4%D8%B1%D8%A7%D8%A1%20%2F%20%D8%AA%D9%81%D8%B9%D9%8A%D9%84%20Ch%C3%A8ques%20Tabbi%20V3-2%20AR.%0A%D8%B1%D9%85%D8%B2%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2%20%3A%20"><svg viewBox="0 0 48 36" aria-hidden="true"><path fill="#4285F4" d="M4 34h8V15L4 9z"/><path fill="#34A853" d="M36 34h8V9l-8 6z"/><path fill="#FBBC04" d="M44 9v-3c0-4-5-6-8-3l-12 9 4 6z"/><path fill="#EA4335" d="M4 6v3l20 15 20-15V6c0-4-5-6-8-3L24 12 12 3C9 0 4 2 4 6z"/></svg>tabbiamar1963@gmail.com</a>
+      <a class="btn secondary" href="#images">مشاهدة البرنامج</a><a class="btn secondary" href="../assets/guide-impression-ar.png" target="_blank" rel="noopener">🖨 دليل إعداد الطابعة</a><a class="btn secondary" href="https://youtu.be/3MbX6gnPfWE" target="_blank" rel="noopener">▶ كيفية طباعة شيك باستعمال Chèques Tabbi</a>
     </div>
-  </div>
+    <div class="pills"><span class="pill">✓ تجربة مجانية 30 يوماً</span><span class="pill">3000 دج لكل نسخة</span><span class="pill">رخصة دائمة بعد الدفع</span><span class="pill">🌐 تفعيل عن بعد</span><span class="counter ar-download-count">جاري تحميل العداد...</span></div>
+    <div class="update-warning">ℹ️ <strong>هل سبق أن حمّلت إصداراً قديماً؟</strong> يمكنك استعماله خلال فترة التجربة، لكن عند طلب التفعيل التجاري <strong>يتم اعتماد آخر إصدار منشور فقط</strong>. حمّل V3-2 أولاً قبل طلب التفعيل.</div>
+    <div class="license-warning">⚠ النسخة الفرنسية والنسخة العربية منتجان منفصلان ويحتاج كل منهما إلى رخصة خاصة به. السعر 3000 دج لكل نسخة.</div>
+  </div><div class="hero-card"><img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar1.png" alt="واجهة Chèques Tabbi V3-2 العربية في وضع الطباعة"></div></div></header>
 
-  <header class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="badge">برنامج Windows</span>
-        <h1>Chèques Tabbi <span class="version">الإصدار 3</span></h1>
-        <p class="lead">إعداد الشيكات وطباعتها وأرشفتها بسهولة، مع نماذج بنكية متعددة، المبلغ بالحروف، Excel / CSV، المعاينة والأرشيف PDF GED.</p>
-        <div class="actions">
-          <a class="btn primary" href="https://github.com/ramat82/cheques-tabbi/releases/download/v3-1/CT_AR_V3_Setup.exe">⬇ تحميل النسخة العربية</a>
-          <a class="btn whatsapp" data-whatsapp="ar" href="https://wa.me/213656687312?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B4%D8%B1%D8%A7%D8%A1%20Ch%C3%A8ques%20Tabbi%20V3%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9.%0A%D8%B1%D9%85%D8%B2%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2%20%3A%20" target="_blank" rel="noopener">💬 شراء / تفعيل عبر WhatsApp</a>
-          <a class="btn secondary" href="#images">مشاهدة البرنامج</a>
-          <a class="btn secondary" href="../assets/guide-impression-ar.png" target="_blank" rel="noopener">🖨 دليل إعداد الطابعة</a>
-          <a class="btn secondary" href="https://youtu.be/3MbX6gnPfWE" target="_blank" rel="noopener">▶ كيفية طباعة شيك باستعمال Chèques Tabbi</a>
-        </div>
-        <div class="pills">
-          <span class="pill">✓ تجربة مجانية 30 يوماً</span>
-          <span class="pill">3000 دج لكل نسخة</span>
-          <span class="pill">رخصة دائمة</span>
-          <span class="counter ar-download-count">جاري تحميل العداد...</span>
-        </div>
-        <div class="license-warning">⚠ النسخة الفرنسية والنسخة العربية منتجان منفصلان ويحتاج كل منهما إلى رخصة خاصة به. رخصة النسخة الفرنسية لا تفعّل النسخة العربية، ورخصة النسخة العربية لا تفعّل النسخة الفرنسية. السعر 3000 دج لكل نسخة.</div>
-      </div>
-      <div class="hero-card">
-        <img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar1.png" alt="واجهة Chèques Tabbi V3 العربية في وضع الطباعة">
-      </div>
+  <section><div class="wrap"><div class="section-head"><p class="eyebrow">الوظائف</p><h2>كل ما تحتاجه لإعداد الشيك وطباعته</h2><p>واجهة عربية من اليمين إلى اليسار مع الحفاظ على الأرقام الغربية 0-9 واستعمال نماذج الشيكات الحقيقية.</p></div><div class="features">
+    <div class="card"><h3>إعداد الشيكات</h3><p>المستفيد، المبلغ، المدينة، التاريخ، رقم الشيك والملاحظة في شاشة واحدة.</p></div><div class="card"><h3>المبلغ بالحروف</h3><p>تحويل المبلغ آلياً إلى كتابة عربية ووضعه على الشيك.</p></div><div class="card"><h3>نماذج بنكية</h3><p>نماذج مضبوطة مسبقاً مع إمكانية الضبط الدقيق لكل بنك.</p></div><div class="card"><h3>Excel و CSV</h3><p>استيراد وتصدير قوائم التحضير بصيغ Excel و CSV.</p></div><div class="card"><h3>الأرشيف PDF GED</h3><p>إنشاء أرشيف PDF الرسمي بعد الطباعة الفعلية للشيك.</p></div><div class="card"><h3>السجل</h3><p>الرجوع إلى الشيكات المطبوعة وإعادة الطباعة مع الحفاظ على الأرشيف.</p></div>
+  </div></div></section>
+
+  <section class="gallery" id="images"><div class="wrap"><div class="section-head"><p class="eyebrow">صور حقيقية</p><h2>النسخة العربية كما تظهر داخل البرنامج</h2><p>الصور التالية ملفات PNG حقيقية منشورة مع الإصدار.</p></div>
+    <article class="shot"><a class="image" href="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar1.png" target="_blank" rel="noopener"><img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar1.png" alt="شاشة الطباعة باللغة العربية"></a><div><h3>وضع الطباعة</h3><p>إدخال بيانات الشيك، اختيار النموذج، الشيك المسطر، المعاينة وقائمة التحضير.</p></div></article>
+    <article class="shot reverse"><a class="image" href="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar2.png" target="_blank" rel="noopener"><img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar2.png" alt="ضبط نموذج الشيك باللغة العربية"></a><div><h3>ضبط النموذج</h3><p>ضبط موضع الصورة، الإزاحات، الأبعاد، الخطوط ومواقع حقول الشيك بدقة.</p></div></article>
+    <article class="shot"><a class="image" href="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar3.png" target="_blank" rel="noopener"><img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar3.png" alt="النسخة العربية بعد التفعيل وملف الشركة"></a><div><h3>بعد التفعيل</h3><p>يظهر شعار المؤسسة واسمها ورقم الهاتف أعلى البرنامج، مع بقاء ملف الشركة قابلاً للتعديل.</p></div></article>
+  </div></section>
+
+  <section class="purchase" id="buy"><div class="wrap"><div class="section-head"><p class="eyebrow">التجربة والشراء والتفعيل</p><h2>جرب النسخة العربية مجاناً لمدة 30 يوماً</h2><p>لا تحتاج إلى بطاقة بنكية أثناء التجربة. يمكن تنفيذ التفعيل عن بعد، وبعد تأكيد الدفع تصبح الرخصة دائمة على الجهاز وتعمل بدون إنترنت.</p></div>
+    <div class="summary"><div><strong>التجربة</strong><span>30 يوماً</span></div><div><strong>السعر</strong><span>3000 دج لكل نسخة</span></div><div><strong>التفعيل</strong><span>عن بعد</span></div><div><strong>الاشتراك</strong><span>لا يوجد</span></div></div>
+    <div class="update-warning">لتفادي أي مشكلة توافق، يتم التفعيل التجاري فقط على <strong>آخر إصدار منشور</strong>.</div>
+    <div class="license-warning">⚠ إذا أردت استعمال النسخة الفرنسية والنسخة العربية معاً، يجب شراء رخصتين منفصلتين.</div>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><h3>حمّل V3-2</h3><p>نزّل آخر نسخة عربية واستفد من 30 يوماً تجريبياً.</p></div>
+      <div class="step"><span class="num">2</span><h3>رمز الجهاز</h3><p>افتح نافذة التفعيل وانسخ رمز الجهاز.</p></div>
+      <div class="step"><span class="num">3</span><h3>تواصل معنا</h3><p>أرسل رمز الجهاز عبر WhatsApp أو Gmail مع تحديد النسخة العربية.</p></div>
+      <div class="step"><span class="num">4</span><h3>تفعيل عن بعد</h3><p>يمكن توفير التفعيل مباشرة عبر الإنترنت بدون إرسال ملف يدوياً.</p></div>
+      <div class="step"><span class="num">5</span><h3>الدفع</h3><p>السعر 3000 دج للنسخة العربية.</p></div>
+      <div class="step"><span class="num">6</span><h3>رخصة نهائية</h3><p>بعد تأكيد الدفع تصبح الرخصة دائمة وتعمل لاحقاً بدون إنترنت.</p></div>
     </div>
-  </header>
+  </div></section>
 
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">الوظائف</p>
-        <h2>كل ما تحتاجه لإعداد الشيك وطباعته</h2>
-        <p>واجهة عربية من اليمين إلى اليسار مع الحفاظ على الأرقام الغربية 0-9 واستعمال نماذج الشيكات الحقيقية.</p>
-      </div>
-      <div class="features">
-        <div class="card"><h3>إعداد الشيكات</h3><p>المستفيد، المبلغ، المدينة، التاريخ، رقم الشيك والملاحظة في شاشة واحدة.</p></div>
-        <div class="card"><h3>المبلغ بالحروف</h3><p>تحويل المبلغ آلياً إلى كتابة عربية ووضعه على الشيك.</p></div>
-        <div class="card"><h3>نماذج بنكية</h3><p>نماذج مضبوطة مسبقاً مع إمكانية الضبط الدقيق لكل بنك.</p></div>
-        <div class="card"><h3>Excel و CSV</h3><p>استيراد وتصدير قوائم التحضير بصيغ Excel و CSV.</p></div>
-        <div class="card"><h3>الأرشيف PDF GED</h3><p>إنشاء أرشيف PDF الرسمي بعد الطباعة الفعلية للشيك.</p></div>
-        <div class="card"><h3>السجل</h3><p>الرجوع إلى الشيكات المطبوعة وإعادة الطباعة مع الحفاظ على الأرشيف.</p></div>
-      </div>
-    </div>
-  </section>
+  <section class="download"><div class="wrap"><div><h2>Chèques Tabbi V3-2 — العربية</h2><p>Windows 64 bits — تجربة مجانية 30 يوماً — التفعيل عن بعد متوفر.</p></div><div class="actions">
+    <a class="btn secondary" href="https://github.com/ramat82/cheques-tabbi/releases/download/V3-2/CT_AR_V3_2_Setup.exe">⬇ تحميل CT_AR_V3_2</a>
+    <a class="btn whatsapp" data-whatsapp="ar" href="https://wa.me/213656687312?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B4%D8%B1%D8%A7%D8%A1%20%2F%20%D8%AA%D9%81%D8%B9%D9%8A%D9%84%20Ch%C3%A8ques%20Tabbi%20V3-2%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9.%0A%D8%B1%D9%85%D8%B2%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2%20%3A%20" target="_blank" rel="noopener">💬 شراء / تفعيل</a>
+    <a class="btn gmail" href="mailto:tabbiamar1963@gmail.com?subject=Activation%20Ch%C3%A8ques%20Tabbi%20V3-2%20AR"><svg viewBox="0 0 48 36" aria-hidden="true"><path fill="#4285F4" d="M4 34h8V15L4 9z"/><path fill="#34A853" d="M36 34h8V9l-8 6z"/><path fill="#FBBC04" d="M44 9v-3c0-4-5-6-8-3l-12 9 4 6z"/><path fill="#EA4335" d="M4 6v3l20 15 20-15V6c0-4-5-6-8-3L24 12 12 3C9 0 4 2 4 6z"/></svg>Gmail</a>
+  </div></div></section>
 
-  <section class="gallery" id="images">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">صور حقيقية</p>
-        <h2>النسخة العربية كما تظهر داخل البرنامج</h2>
-        <p>الصور التالية ملفات PNG حقيقية منشورة مع الإصدار.</p>
-      </div>
-
-      <article class="shot">
-        <a class="image" href="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar1.png" target="_blank" rel="noopener"><img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar1.png" alt="شاشة الطباعة باللغة العربية"></a>
-        <div><h3>وضع الطباعة</h3><p>إدخال بيانات الشيك، اختيار النموذج، الشيك المسطر، المعاينة وقائمة التحضير.</p></div>
-      </article>
-
-      <article class="shot reverse">
-        <a class="image" href="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar2.png" target="_blank" rel="noopener"><img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar2.png" alt="ضبط نموذج الشيك باللغة العربية"></a>
-        <div><h3>ضبط النموذج</h3><p>ضبط موضع الصورة، الإزاحات، الأبعاد، الخطوط ومواقع حقول الشيك بدقة.</p></div>
-      </article>
-
-      <article class="shot">
-        <a class="image" href="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar3.png" target="_blank" rel="noopener"><img src="https://github.com/ramat82/cheques-tabbi/releases/download/v2.0.0/ar3.png" alt="النسخة العربية بعد التفعيل وملف الشركة"></a>
-        <div><h3>بعد التفعيل</h3><p>يظهر شعار المؤسسة واسمها ورقم الهاتف أعلى البرنامج، مع بقاء ملف الشركة قابلاً للتعديل.</p></div>
-      </article>
-    </div>
-  </section>
-
-  <section class="purchase" id="buy">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">التجربة والشراء والتفعيل</p>
-        <h2>جرب النسخة العربية مجاناً لمدة 30 يوماً</h2>
-        <p>لا تحتاج إلى بطاقة بنكية أثناء التجربة. بعد الشراء تصبح الرخصة دائمة على الجهاز الذي تم تفعيله.</p>
-      </div>
-
-      <div class="summary">
-        <div><strong>التجربة</strong><span>30 يوماً</span></div>
-        <div><strong>السعر</strong><span>3000 دج لكل نسخة</span></div>
-        <div><strong>الرخصة</strong><span>دائمة</span></div>
-        <div><strong>الاشتراك</strong><span>لا يوجد</span></div>
-      </div>
-
-      <div class="license-warning">⚠ إذا أردت استعمال النسخة الفرنسية والنسخة العربية معاً، يجب شراء رخصتين منفصلتين: رخصة للفرنسية ورخصة للعربية.</div>
-
-      <div class="steps">
-        <div class="step"><span class="num">1</span><h3>حمّل البرنامج</h3><p>نزّل CT_AR_V3_Setup.exe واستفد من 30 يوماً تجريبياً.</p></div>
-        <div class="step"><span class="num">2</span><h3>افتح التفعيل</h3><p>انسخ رمز الجهاز الظاهر في نافذة التفعيل.</p></div>
-        <div class="step"><span class="num">3</span><h3>أرسل الرمز</h3><p>أرسله إلينا عبر WhatsApp مع طلب رخصة النسخة العربية.</p></div>
-        <div class="step"><span class="num">4</span><h3>الدفع</h3><p>السعر 3000 دج للنسخة العربية.</p></div>
-        <div class="step"><span class="num">5</span><h3>استلم ملف الرخصة</h3><p>بعد التحقق من الدفع تحصل على ملف الرخصة الخاص بهذه النسخة.</p></div>
-        <div class="step"><span class="num">6</span><h3>التفعيل النهائي</h3><p>استورد ملف الرخصة، ثم أدخل شعار المؤسسة واسمها ورقم الهاتف.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="download">
-    <div class="wrap">
-      <div><h2>Chèques Tabbi V3 — العربية</h2><p>Windows 10 / 11 — 64 bits — تجربة مجانية 30 يوماً.</p></div>
-      <div class="actions">
-        <a class="btn secondary" href="https://github.com/ramat82/cheques-tabbi/releases/download/v3-1/CT_AR_V3_Setup.exe">⬇ تحميل CT_AR_V3</a>
-        <a class="btn whatsapp" data-whatsapp="ar" href="https://wa.me/213656687312?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B4%D8%B1%D8%A7%D8%A1%20Ch%C3%A8ques%20Tabbi%20V3%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9.%0A%D8%B1%D9%85%D8%B2%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2%20%3A%20" target="_blank" rel="noopener">💬 شراء / تفعيل</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap"><div><strong>Chèques Tabbi V3</strong> — النسخة العربية</div><div>© 2026 Tabbi Applications</div></div>
-  </footer>
-
+  <footer><div class="wrap"><div><strong>Chèques Tabbi V3-2</strong> — النسخة العربية</div><div><a href="mailto:tabbiamar1963@gmail.com">✉ tabbiamar1963@gmail.com</a> &nbsp; © 2026 Tabbi Applications</div></div></footer>
   <script>
-    document.querySelectorAll('[data-whatsapp="ar"]').forEach(link => {
-      link.addEventListener('click', () => {
-        if (typeof gtag === 'function') gtag('event','cheques_ar_whatsapp_click',{contact_method:'whatsapp'});
-      });
-    });
-
-    (() => {
-      const apiUrl='https://api.github.com/repos/ramat82/cheques-tabbi/releases/latest';
-      const assetName='CT_AR_V3_Setup.exe';
-      const counters=document.querySelectorAll('.ar-download-count');
-      fetch(apiUrl,{headers:{Accept:'application/vnd.github+json'}})
-        .then(r=>{if(!r.ok)throw new Error('GitHub API');return r.json();})
-        .then(release=>{
-          const asset=Array.isArray(release.assets)?release.assets.find(x=>x.name===assetName):null;
-          if(!asset||typeof asset.download_count!=='number')throw new Error('counter');
-          const n=asset.download_count;
-          counters.forEach(el=>el.textContent=(n===1?'تحميل واحد':`${n.toLocaleString('ar-DZ')} تحميلات`));
-        })
-        .catch(()=>counters.forEach(el=>el.textContent='عداد التحميل غير متاح مؤقتاً'));
-    })();
+    document.querySelectorAll('[data-whatsapp="ar"]').forEach(link=>link.addEventListener('click',()=>{if(typeof gtag==='function')gtag('event','cheques_ar_whatsapp_click',{contact_method:'whatsapp'});}));
+    (()=>{const apiUrl='https://api.github.com/repos/ramat82/cheques-tabbi/releases/tags/V3-2';const assetName='CT_AR_V3_2_Setup.exe';const counters=document.querySelectorAll('.ar-download-count');fetch(apiUrl,{headers:{Accept:'application/vnd.github+json'}}).then(r=>{if(!r.ok)throw new Error('GitHub API');return r.json();}).then(release=>{const asset=Array.isArray(release.assets)?release.assets.find(x=>x.name===assetName):null;if(!asset||typeof asset.download_count!=='number')throw new Error('counter');const n=asset.download_count;counters.forEach(el=>el.textContent=(n===1?'تحميل واحد':`${n.toLocaleString('ar-DZ')} تحميلات`));}).catch(()=>counters.forEach(el=>el.textContent='عداد التحميل غير متاح مؤقتاً'));})();
   </script>
 </body>
 </html>
