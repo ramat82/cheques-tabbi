@@ -23,58 +23,98 @@
 
   <style>
     :root{
-      --ink:#172033;--blue:#1558a6;--purple:#7041d9;
-      --soft:#f4f8fb;--line:#d8e3eb;--white:#fff;--pink:#d24f80;
+      --ink:#172033;--blue:#1558a6;--blue2:#20a7d8;--purple:#7041d9;
+      --soft:#f4f8fb;--line:#d8e3eb;--white:#fff;--pink:#d24f80;--gold:#f0a92d;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,"Segoe UI",Arial,Tahoma,sans-serif;background:linear-gradient(180deg,#eef7fb 0,#fff 55%,#fff7fa 100%);color:var(--ink)}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;font-family:Inter,"Segoe UI",Arial,Tahoma,sans-serif;color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 10%,#bfe8ff 0,transparent 24%),
+        radial-gradient(circle at 92% 15%,#f8cde0 0,transparent 23%),
+        radial-gradient(circle at 55% 70%,#e7dcff 0,transparent 25%),
+        linear-gradient(180deg,#f4fbff 0,#fff 52%,#fff8fb 100%);
+      min-height:100vh;
+    }
+    body:before,body:after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(4px);opacity:.45;pointer-events:none}
+    body:before{width:240px;height:240px;background:#57c8f3;top:18%;left:-100px;animation:float 8s ease-in-out infinite}
+    body:after{width:300px;height:300px;background:#e58cb3;right:-130px;top:45%;animation:float 10s ease-in-out infinite reverse}
     .wrap{width:min(1220px,94%);margin:auto}
-    .topbar{background:#172033;color:#fff;padding:12px 0;text-align:center;font-weight:800}
-    .hero{text-align:center;padding:42px 0 24px}
-    .hero h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin:0;color:#123f64}
-    .hero h1 span{display:inline-block;background:var(--purple);color:#fff;border-radius:999px;padding:7px 14px;font-size:.32em;vertical-align:middle}
-    .hero p{font-size:clamp(1rem,2vw,1.25rem);color:#4b6170;margin:18px auto 0;max-width:860px}
-    .choice{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:28px 0 50px}
-    .version-card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 18px 55px #173b5518}
-    .version-head{padding:20px 20px 16px;text-align:center}
+    .topbar{background:linear-gradient(90deg,#102a3d,#174f7c 48%,#7041d9);color:#fff;padding:11px 0;text-align:center;font-weight:900;letter-spacing:.2px;box-shadow:0 4px 20px #0e263b25}
+    .hero{text-align:center;padding:52px 0 24px;position:relative}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;background:#ffffffc9;border:1px solid #cfe0ea;box-shadow:0 10px 30px #163c5812;border-radius:999px;padding:9px 14px;font-weight:900;color:#174f7c;backdrop-filter:blur(8px)}
+    .hero h1{font-size:clamp(2.7rem,6vw,5.3rem);line-height:1;margin:18px 0 0;color:#123f64;letter-spacing:-2px;text-shadow:0 8px 24px #20567b14}
+    .hero h1 span{display:inline-block;background:linear-gradient(135deg,var(--purple),#9b57e9);color:#fff;border-radius:999px;padding:7px 14px;font-size:.32em;vertical-align:middle;box-shadow:0 10px 25px #7041d940}
+    .hero p{font-size:clamp(1rem,2vw,1.25rem);color:#4b6170;margin:18px auto 0;max-width:860px;line-height:1.6}
+    .quick-points{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .quick-points span{background:#fff;border:1px solid #d5e4ee;border-radius:999px;padding:9px 13px;font-weight:900;box-shadow:0 8px 24px #173b5511}
+    .quick-points span:nth-child(2){border-color:#ead9ff}.quick-points span:nth-child(3){border-color:#ffd6e5}
+
+    .choice{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:34px 0 38px}
+    .version-card{background:#ffffffdf;border:1px solid #dce8ef;border-radius:28px;overflow:hidden;box-shadow:0 22px 65px #173b5520;backdrop-filter:blur(10px);transition:.25s transform,.25s box-shadow}
+    .version-card:hover{transform:translateY(-6px);box-shadow:0 30px 80px #173b5530}
+    .version-head{padding:23px 20px 18px;text-align:center}
     .version-head h2{font-size:clamp(1.7rem,3vw,2.6rem);margin:0 0 6px}
     .version-head p{margin:0;color:#657582;font-weight:700}
-    .fr .version-head{background:linear-gradient(135deg,#d7f0f2,#eef9f7)}
-    .ar .version-head{background:linear-gradient(135deg,#f5ccdc,#fff0f5)}
-    .image-wrap{position:relative;min-height:320px;background:#102a3d;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .image-wrap img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block;filter:brightness(.77)}
-    .download-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;text-align:center;width:min(82%,430px);min-height:88px;padding:18px 24px;border-radius:18px;text-decoration:none;color:#fff;font-weight:950;font-size:clamp(1.25rem,2.4vw,2rem);box-shadow:0 14px 35px #0008;border:3px solid #ffffffdd;transition:.16s}
-    .download-btn:hover{transform:translate(-50%,-53%) scale(1.02);filter:brightness(1.08)}
+    .fr .version-head{background:linear-gradient(135deg,#d7f0f2,#eef9f7 55%,#dff4ff)}
+    .ar .version-head{background:linear-gradient(135deg,#f5ccdc,#fff0f5 55%,#eee5ff)}
+    .image-wrap{position:relative;min-height:330px;background:#102a3d;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .image-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 15%,#07172566 100%);pointer-events:none}
+    .image-wrap img{width:100%;height:100%;min-height:330px;object-fit:cover;display:block;filter:brightness(.78) saturate(1.08);transition:.4s transform,.4s filter}
+    .version-card:hover .image-wrap img{transform:scale(1.025);filter:brightness(.84) saturate(1.12)}
+    .download-btn{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;text-align:center;width:min(84%,430px);min-height:92px;padding:18px 24px;border-radius:20px;text-decoration:none;color:#fff;font-weight:950;font-size:clamp(1.25rem,2.4vw,2rem);box-shadow:0 16px 42px #0008;border:3px solid #ffffffee;transition:.18s transform,.18s filter,.18s box-shadow}
+    .download-btn:hover{transform:translate(-50%,-54%) scale(1.035);filter:brightness(1.1);box-shadow:0 20px 50px #0009}
     .fr .download-btn{background:linear-gradient(135deg,#1558a6,#0d3f7f)}
     .ar .download-btn{background:linear-gradient(135deg,#d24f80,#8f2f61)}
-    .details{padding:20px}
+    .details{padding:22px}
     .pills{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
-    .pill{background:#f4f8fb;border:1px solid #d8e3eb;border-radius:999px;padding:8px 12px;font-weight:800}
+    .pill{background:#f8fbfd;border:1px solid #d8e3eb;border-radius:999px;padding:8px 12px;font-weight:900}
     .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-    .action{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:900;border:2px solid transparent}
-    .more{background:#fff;color:#174f7c;border-color:#cddde8}
-    .activation-note{margin:0 0 14px;text-align:center;color:#526878;font-weight:800}
-    .note{background:#fff3cd;border:2px solid #e4a900;color:#5b4500;border-radius:16px;padding:16px 18px;margin:0 auto 40px;max-width:1020px;text-align:center;font-weight:800}
-    footer{background:#102a3d;color:#dcecf6;padding:25px 0;text-align:center}
-    footer a{color:#fff}
+    .action{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 16px;border-radius:13px;text-decoration:none;font-weight:900;border:2px solid transparent;transition:.18s}
+    .action:hover{transform:translateY(-2px)}
+    .more{background:#fff;color:#174f7c;border-color:#cddde8;box-shadow:0 8px 20px #173b5510}
+    .activation-note{margin:0 0 14px;text-align:center;color:#526878;font-weight:800;line-height:1.5}
+
+    .showcase{padding:18px 0 48px}
+    .section-title{text-align:center;margin-bottom:22px}
+    .section-title h3{margin:0;font-size:clamp(1.65rem,3vw,2.4rem);color:#173e5c}
+    .section-title p{margin:8px auto 0;color:#647987;max-width:760px;font-weight:700}
+    .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .shot{background:#fff;border:1px solid #d8e5ed;border-radius:20px;padding:10px;box-shadow:0 15px 38px #173b5515;overflow:hidden;transition:.22s transform,.22s box-shadow}
+    .shot:hover{transform:translateY(-5px) rotate(-.2deg);box-shadow:0 22px 45px #173b5525}
+    .shot img{width:100%;height:210px;object-fit:cover;border-radius:14px;display:block}
+    .shot strong{display:block;padding:12px 6px 4px;text-align:center;color:#274d68}
+
+    .note{background:linear-gradient(135deg,#fff4ca,#fff9e8);border:2px solid #e7b236;color:#5b4500;border-radius:18px;padding:17px 18px;margin:0 auto 42px;max-width:1020px;text-align:center;font-weight:900;box-shadow:0 10px 26px #b8891715}
+    footer{background:linear-gradient(90deg,#102a3d,#173e5c);color:#dcecf6;padding:28px 0;text-align:center}
+    footer a{color:#fff;font-weight:800}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}
     @media(max-width:850px){
       .choice{grid-template-columns:1fr;gap:24px}
+      .shots{grid-template-columns:1fr 1fr}
       .image-wrap,.image-wrap img{min-height:280px}
     }
-    @media(max-width:520px){
-      .hero{padding-top:30px}.choice{padding-top:20px}
-      .image-wrap,.image-wrap img{min-height:235px}
-      .download-btn{min-height:76px;width:88%}
-      .action{width:100%}
+    @media(max-width:560px){
+      .hero{padding-top:34px}.choice{padding-top:22px}.hero h1{letter-spacing:-1px}
+      .image-wrap,.image-wrap img{min-height:235px}.download-btn{min-height:78px;width:89%}.action{width:100%}.shots{grid-template-columns:1fr}.shot img{height:auto}
     }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="topbar">Chèques Tabbi V3-2 — Windows — Français & العربية</div>
+  <div class="topbar">✨ Chèques Tabbi V3-2 — Windows — Français & العربية</div>
 
   <header class="hero wrap">
+    <div class="eyebrow">🧾 Simple • rapide • prêt à imprimer</div>
     <h1>Chèques Tabbi <span>V3-2</span></h1>
-    <p>Choisissez directement votre version. Les deux téléchargements viennent de la release officielle GitHub.</p>
+    <p>Préparez vos chèques plus facilement, gardez l’historique et imprimez avec une présentation claire. Choisissez votre version et essayez-la gratuitement pendant 30 jours.</p>
+    <div class="quick-points" aria-label="Points clés">
+      <span>🪟 Windows</span>
+      <span>🎁 30 jours d’essai</span>
+      <span>🔓 Licence permanente : 3 000 DA</span>
+      <span>🌐 Français + العربية</span>
+    </div>
   </header>
 
   <main class="wrap">
@@ -122,6 +162,18 @@
           </div>
         </div>
       </article>
+    </section>
+
+    <section class="showcase" aria-label="Aperçu de l'application">
+      <div class="section-title">
+        <h3>Un aperçu avant de télécharger</h3>
+        <p>Quelques écrans de Chèques Tabbi pour voir immédiatement l’interface et les principales fonctions.</p>
+      </div>
+      <div class="shots">
+        <div class="shot"><img src="assets/screenshots/02-reglage.jpg" alt="Réglages de Chèques Tabbi"><strong>Réglages simples</strong></div>
+        <div class="shot"><img src="assets/screenshots/03-banques.jpg" alt="Gestion des banques"><strong>Gestion des banques</strong></div>
+        <div class="shot"><img src="assets/screenshots/06-historique.jpg" alt="Historique des chèques"><strong>Historique clair</strong></div>
+      </div>
     </section>
 
     <div class="note">
