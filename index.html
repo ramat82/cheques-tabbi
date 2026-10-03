@@ -51,6 +51,20 @@
     .quick-points span{background:#fff;border:1px solid #d5e4ee;border-radius:999px;padding:9px 13px;font-weight:900;box-shadow:0 8px 24px #173b5511}
     .quick-points span:nth-child(2){border-color:#ead9ff}.quick-points span:nth-child(3){border-color:#ffd6e5}
 
+    .tutorials{margin:8px 0 12px;padding:26px;border:2px solid #ffb7b7;border-radius:28px;background:linear-gradient(135deg,#fff7f7,#fff 55%,#fff3f3);box-shadow:0 20px 55px #b3131320;position:relative;overflow:hidden}
+    .tutorials:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:#ff000012;right:-55px;top:-75px;pointer-events:none}
+    .tutorial-head{text-align:center;position:relative;z-index:1;margin-bottom:18px}
+    .tutorial-head h2{margin:0;color:#a40000;font-size:clamp(1.65rem,3vw,2.45rem);font-weight:950}
+    .tutorial-head p{margin:8px auto 0;max-width:780px;color:#6a4b4b;font-weight:800;line-height:1.5}
+    .video-links{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;z-index:1}
+    .video-link{display:flex;align-items:center;gap:16px;min-height:112px;padding:16px 18px;border-radius:20px;text-decoration:none;background:#fff;color:#321c1c;border:3px solid #ff1f1f;box-shadow:0 12px 28px #8a11111d;transition:.2s transform,.2s box-shadow,.2s background}
+    .video-link:hover{transform:translateY(-4px);box-shadow:0 18px 36px #8a11112b;background:#fffafa}
+    .yt-play{flex:0 0 64px;width:64px;height:46px;border-radius:13px;background:#f00;display:flex;align-items:center;justify-content:center;color:#fff;font-size:25px;line-height:1;box-shadow:0 8px 18px #f0000045}
+    .video-copy{display:block;line-height:1.3}
+    .video-copy small{display:block;color:#d00000;font-size:.78rem;font-weight:950;letter-spacing:.35px;margin-bottom:5px;text-transform:uppercase}
+    .video-copy strong{display:block;font-size:clamp(1.05rem,2vw,1.35rem);font-weight:950}
+    .video-copy em{display:block;font-style:normal;color:#6e6262;font-weight:750;margin-top:7px;font-size:.92rem}
+
     .choice{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:34px 0 38px}
     .version-card{background:#ffffffdf;border:1px solid #dce8ef;border-radius:28px;overflow:hidden;box-shadow:0 22px 65px #173b5520;backdrop-filter:blur(10px);transition:.25s transform,.25s box-shadow}
     .version-card:hover{transform:translateY(-6px);box-shadow:0 30px 80px #173b5530}
@@ -91,12 +105,14 @@
     footer a{color:#fff;font-weight:800}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}
     @media(max-width:850px){
+      .video-links{grid-template-columns:1fr}
       .choice{grid-template-columns:1fr;gap:24px}
       .shots{grid-template-columns:1fr 1fr}
       .image-wrap,.image-wrap img{min-height:280px}
     }
     @media(max-width:560px){
       .hero{padding-top:34px}.choice{padding-top:22px}.hero h1{letter-spacing:-1px}
+      .tutorials{padding:20px 14px;border-radius:22px}.video-link{padding:14px;gap:12px;min-height:100px}.yt-play{flex-basis:54px;width:54px;height:40px}
       .image-wrap,.image-wrap img{min-height:235px}.download-btn{min-height:78px;width:89%}.action{width:100%}.shots{grid-template-columns:1fr}.shot img{height:auto}
     }
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
@@ -118,6 +134,31 @@
   </header>
 
   <main class="wrap">
+    <section class="tutorials" aria-label="Tutoriels vidéo Chèques Tabbi">
+      <div class="tutorial-head">
+        <h2>🎥 TUTORIELS VIDÉO — CHÈQUES TABBI</h2>
+        <p>Deux vidéos pratiques accessibles en un clic. Elles s’ouvrent directement sur YouTube.</p>
+      </div>
+      <div class="video-links">
+        <a class="video-link" href="https://youtu.be/3MbX6gnPfWE" target="_blank" rel="noopener noreferrer">
+          <span class="yt-play" aria-hidden="true">▶</span>
+          <span class="video-copy">
+            <small>Voir sur YouTube</small>
+            <strong>Comment imprimer un chèque avec le logiciel « Chèque Tabbi »</strong>
+            <em>Guide d’impression pas à pas</em>
+          </span>
+        </a>
+        <a class="video-link" href="https://youtu.be/_Qf75h5y5ME" target="_blank" rel="noopener noreferrer">
+          <span class="yt-play" aria-hidden="true">▶</span>
+          <span class="video-copy">
+            <small>Voir sur YouTube</small>
+            <strong>Comment utiliser le logiciel Chèques Tabbi</strong>
+            <em>Présentation et utilisation du logiciel</em>
+          </span>
+        </a>
+      </div>
+    </section>
+
     <section class="choice" aria-label="Choix de la version">
       <article class="version-card fr">
         <div class="version-head">
