@@ -98,6 +98,9 @@
     .more{background:#fff;color:#174f7c;border-color:#cddde8;box-shadow:0 8px 20px #173b5510}
     .activation-note{margin:0 0 14px;text-align:center;color:#526878;font-weight:800;line-height:1.5}
 
+    .total-downloads{max-width:700px;margin:4px auto 30px;padding:20px 24px;text-align:center;border:2px solid #c7ddef;border-radius:20px;background:#f2f8ff;box-shadow:0 10px 26px #173b5512}
+    .total-downloads strong{display:block;font-size:clamp(1.7rem,3vw,2.4rem);color:#123e76;margin:8px 0}
+    .total-downloads p{margin:4px 0;color:#47647a;font-weight:700}
     .showcase{padding:18px 0 48px}
     .section-title{text-align:center;margin-bottom:22px}
     .section-title h3{margin:0;font-size:clamp(1.65rem,3vw,2.4rem);color:#173e5c}
@@ -154,6 +157,11 @@
   </header>
 
   <main class="wrap">
+    <section class="total-downloads" aria-label="Nombre total de téléchargements V3.3" aria-live="polite">
+      <p>📥 Téléchargements GitHub — V3.3 (FR + العربية, 32 et 64 bits)</p>
+      <strong class="total-count">Chargement du compteur…</strong>
+      <p lang="ar" dir="rtl">إجمالي تحميلات النسخ الفرنسية والعربية (32 و64 بت)</p>
+    </section>
     <section class="tutorials" aria-label="Tutoriels vidéo Chèques Tabbi">
       <div class="tutorial-head">
         <h2>🎥 TUTORIELS VIDÉO — CHÈQUES TABBI</h2>
@@ -259,10 +267,21 @@
       .then(rel=>{
         const fr=rel.assets.find(x=>x.name==='Cheques_TABBI_FR_V3.3_Setup.exe');
         const ar=rel.assets.find(x=>x.name==='Cheques_TABBI_AR_V3.3_Setup.exe');
+        const installers=[
+          'Cheques_TABBI_FR_V3.3_Setup.exe',
+          'Cheques_TABBI_FR_V3.3_x86_Setup.exe',
+          'Cheques_TABBI_AR_V3.3_Setup.exe',
+          'Cheques_TABBI_AR_V3.3_x86_Setup.exe'
+        ];
+        const allPresent=installers.every(name=>rel.assets.some(x=>x.name===name && Number.isFinite(x.download_count)));
+        document.querySelectorAll('.total-count').forEach(e=>e.textContent=allPresent
+          ? installers.reduce((sum,name)=>sum+rel.assets.find(x=>x.name===name).download_count,0).toLocaleString('fr-FR')+' téléchargements'
+          : 'Compteur indisponible');
         document.querySelectorAll('.fr-count').forEach(e=>e.textContent=fr?fr.download_count.toLocaleString('fr-FR')+' téléchargements':'Compteur indisponible');
         document.querySelectorAll('.ar-count').forEach(e=>e.textContent=ar?ar.download_count.toLocaleString('fr-FR')+' تحميل':'العداد غير متاح');
       })
       .catch(()=>{
+        document.querySelectorAll('.total-count').forEach(e=>e.textContent='Compteur indisponible');
         document.querySelectorAll('.fr-count').forEach(e=>e.textContent='Compteur indisponible');
         document.querySelectorAll('.ar-count').forEach(e=>e.textContent='العداد غير متاح');
       });
